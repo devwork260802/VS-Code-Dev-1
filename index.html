@@ -1,79 +1,42 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="en" >
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>GevStack - todo checkbox</title>
-
-
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Gevstcak - Color Changing Navigation Bar</title>
+  <link rel="stylesheet" href="./style.css">
 
 </head>
-
 <body>
+<div class="wrapper">
+	<div class="navbar">
+		<a href="#" class="navitem active" onclick="select(this)" data-clr="#e4ecfa">
+			<div class="indicator"></div>
+			<div class="hoverindicator"></div>
+			<ion-icon name="home"></ion-icon>
+		</a>
+		<a href="#" class="navitem" onclick="select(this)" data-clr="#fff6cc">
+			<div class="indicator"></div>
+			<div class="hoverindicator"></div>
+			<ion-icon name="person"></ion-icon>
+		</a>
+		<div class="navsearch">
+			<input class="searchbox"></input>
+			<div class="searchicon" onclick="selectsearch()">
+				<ion-icon name="search"></ion-icon>
+			</div>
+		</div>
+		<a href="#" class="navitem" onclick="select(this)" data-clr="#f0e4fa">
+			<div class="indicator"></div>
+			<div class="hoverindicator"></div>
+			<ion-icon name="cog"></ion-icon>
+		</a>
+	</div>
+</div>
 
-    <div class="container">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-        <div class="checkboxes">
-
-            <div class="checkbox-wrapper-11">
-
-                <input id="02-11" type="checkbox" name="r" value="2">
-
-                <label for="02-11">Sherni ke sath chill ❤︎</label>
-
-            </div>
-
-    
-
-            <div class="checkbox-wrapper-11">
-
-                <input id="03-11" type="checkbox" name="r" value="3">
-
-                <label for="03-11">Gym 🦾 </label>
-
-            </div>
-
-    
-
-            <div class="checkbox-wrapper-11">
-
-                <input id="04-11" type="checkbox" name="r" value="4">
-
-                <label for="04-11"><p>Padhayi <span style="color: red;">✘</span> ye kya hota hai</p></label>
-
-            </div>
-
-    
-
-            <div class="checkbox-wrapper-11">
-
-                <input id="05-11" type="checkbox" name="r" value="5">
-
-                <label for="05-11">Trip to Thailand ✈</label>
-
-            </div>
-
-    
-
-            <div class="checkbox-wrapper-11">
-
-                <input id="06-11" type="checkbox" name="r" value="6">
-
-                <label for="06-11">Paise kamane ke Sapne 💸 </label>
-
-            </div>
-
-        </div>
-
-    </div>    
+  <script  src="./script.js"></script>
 
 </body>
-
 </html>
