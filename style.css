@@ -1,160 +1,108 @@
+* {
+    margin: 0;
+}
 body {
-  color: #333;
-  font-family: Arial, Helvetica, serif;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-  background: url(https://josetxu.com/img/fondo_blanco.png) repeat 0 0 #fff;
+    background: #fff;
 }
-
-h1 {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  margin: 0 0 5% 0;
-  padding: 0.5em;
-  margin: 0 0 5% 0;
+.container {
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-.cardBox {
-  float: left;
-  font-size: 1.2em;
-  margin: 1% 0 0 1%;
-  perspective: 800px;
-  transition: all 0.3s ease 0s;
-  width: 23.7%;
+.btn-group {
+    height: 160px;
+    width: 160px;
+    border-radius: 160px;
+    transform: scale(0.5);
+    font-family: calibri;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.83, -0.24, 0.24, 1.31);
+    background-color: #fff;
+    vertical-align: middle;
 }
-
-.cardBox:hover .card {
-  transform: rotateY(180deg);
+.btn {
+    height: 80px;
+    width: 80px;
+    float: left;
+    font-size: 40px;
+    line-height: 80px;
+    border: none;
+    background-color: #2196F3;
+    color: #2196F3;
+    transition: all 0.5s cubic-bezier(0.83, -0.24, 0.24, 1.31),
+        background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.card {
-  background: #222;
-  cursor: default;
-  height: 300px;
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease 0s;
-  width: 100%;
-  -webkit-animation: giro 1s 1;
-  animation: giro 1s 1;
+.btn:hover {
+    background-color: #64B5F6;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
 }
-
-.card p {
-  margin-bottom: 1.8em;
+.btn-group > span {
+    height: 60px;
+    width: 60px;
+    margin: 50px 50px;
+    position: absolute;
 }
-
-.card .front,
-.card .back {
-  backface-visibility: hidden;
-  box-sizing: border-box;
-  color: white;
-  display: block;
-  font-size: 1.2em;
-  height: 100%;
-  padding: 0.8em;
-  position: absolute;
-  text-align: center;
-  width: 100%;
+.btn-group > span::before,
+.btn-group > span::after {
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    border-radius: 10px;
 }
-
-.card .front strong {
-  background: #fff;
-  border-radius: 100%;
-  color: #222;
-  font-size: 1.5em;
-  line-height: 30px;
-  padding: 0 7px 4px 6px;
+.btn-group > span::before {
+    width: 10px;
+    height: 100%;
+    margin: 0 25px;
 }
-
-.card .back {
-  transform: rotateY(180deg);
+.btn-group > span::after {
+    width: 100%;
+    height: 10px;
+    margin: 25px 0;
 }
-
-.card .back a {
-  padding: 0.3em 0.5em;
-  background: #333;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 1px;
-  font-size: 0.9em;
-  transition: all 0.2s ease 0s;
+.btn-group:hover {
+    transform: scale(0.85) rotate(45deg);
+    cursor: default;
 }
-
-.card .back a:hover {
-  background: #fff;
-  color: #333;
-  text-shadow: 0 0 1px #333;
+.btn-group:hover > span {
+    opacity: 0;
 }
-
-.cardBox:nth-child(1) .card .back {
-  background: cornflowerblue;
+.btn-group:hover > .btn {
+    border-radius: 100%;
+    color: #fff;
+    transform: rotate(-45deg);
 }
-
-.cardBox:nth-child(2) .card .back {
-  background: orange;
+.btn:nth-child(2) {
+    border-radius: 80px 0 0 0;
 }
-
-.cardBox:nth-child(3) .card .back {
-  background: yellowgreen;
+.btn:nth-child(3) {
+    border-radius: 0 80px 0 0;
 }
-
-.cardBox:nth-child(4) .card .back {
-  background: tomato;
+.btn:nth-child(4) {
+    border-radius: 0 0 0 80px;
 }
-
-.cardBox:nth-child(2) .card {
-  -webkit-animation: giro 1.5s 1;
-  animation: giro 1.5s 1;
+.btn:nth-child(5) {
+    border-radius: 0 0 80px 0;
 }
-
-.cardBox:nth-child(3) .card {
-  -webkit-animation: giro 2s 1;
-  animation: giro 2s 1;
+.btn-group:hover > .btn:nth-child(2) {
+    margin: -5px 5px 5px -5px;
 }
-
-.cardBox:nth-child(4) .card {
-  -webkit-animation: giro 2.5s 1;
-  animation: giro 2.5s 1;
+.btn-group:hover > .btn:nth-child(3) {
+    margin: -5px -5px 5px 5px;
 }
-
-@-webkit-keyframes giro {
-  from {
-    transform: rotateY(180deg);
-  }
-  to {
-    transform: rotateY(0deg);
-  }
+.btn-group:hover > .btn:nth-child(4) {
+    margin: 5px 5px -5px -5px;
 }
-
-@keyframes giro {
-  from {
-    transform: rotateY(180deg);
-  }
-  to {
-    transform: rotateY(0deg);
-  }
+.btn-group:hover > .btn:nth-child(5) {
+    margin: 5px -5px -5px 5px;
 }
-
-@media screen and (max-width: 767px) {
-  .cardBox {
-    margin-left: 2.8%;
-    margin-top: 3%;
-    width: 46%;
-  }
-  .card {
-    height: 285px;
-  }
-  .cardBox:last-child {
-    margin-bottom: 3%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .cardBox {
-    width: 94.5%;
-  }
-  .card {
-    height: 260px;
-  }
+.material-icons {
+    font-size: 36px !important;
 }
