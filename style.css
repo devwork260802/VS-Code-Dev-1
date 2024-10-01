@@ -1,108 +1,56 @@
-* {
-    margin: 0;
-}
-body {
-    background: #fff;
-}
-.container {
-    height: 200px;
-    width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.btn-group {
-    height: 160px;
-    width: 160px;
-    border-radius: 160px;
-    transform: scale(0.5);
-    font-family: calibri;
-    position: absolute;
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.83, -0.24, 0.24, 1.31);
-    background-color: #fff;
-    vertical-align: middle;
-}
-.btn {
-    height: 80px;
-    width: 80px;
-    float: left;
-    font-size: 40px;
-    line-height: 80px;
-    border: none;
-    background-color: #2196F3;
-    color: #2196F3;
-    transition: all 0.5s cubic-bezier(0.83, -0.24, 0.24, 1.31),
-        background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.btn:hover {
-    background-color: #64B5F6;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
-}
-.btn-group > span {
-    height: 60px;
-    width: 60px;
-    margin: 50px 50px;
-    position: absolute;
-}
-.btn-group > span::before,
-.btn-group > span::after {
-    content: "";
-    background-color: #fff;
-    position: absolute;
-    border-radius: 10px;
-}
-.btn-group > span::before {
-    width: 10px;
-    height: 100%;
-    margin: 0 25px;
-}
-.btn-group > span::after {
-    width: 100%;
-    height: 10px;
-    margin: 25px 0;
-}
-.btn-group:hover {
-    transform: scale(0.85) rotate(45deg);
-    cursor: default;
-}
-.btn-group:hover > span {
-    opacity: 0;
-}
-.btn-group:hover > .btn {
-    border-radius: 100%;
-    color: #fff;
-    transform: rotate(-45deg);
-}
-.btn:nth-child(2) {
-    border-radius: 80px 0 0 0;
-}
-.btn:nth-child(3) {
-    border-radius: 0 80px 0 0;
-}
-.btn:nth-child(4) {
-    border-radius: 0 0 0 80px;
-}
-.btn:nth-child(5) {
-    border-radius: 0 0 80px 0;
-}
-.btn-group:hover > .btn:nth-child(2) {
-    margin: -5px 5px 5px -5px;
-}
-.btn-group:hover > .btn:nth-child(3) {
-    margin: -5px -5px 5px 5px;
-}
-.btn-group:hover > .btn:nth-child(4) {
-    margin: 5px 5px -5px -5px;
-}
-.btn-group:hover > .btn:nth-child(5) {
-    margin: 5px -5px -5px 5px;
-}
-.material-icons {
-    font-size: 36px !important;
-}
+/* Css reset */  
+ * {  
+   margin: 0;  
+   padding: 0;  
+   box-sizing: border-box;  
+ }  
+ /* centering the insta logo */  
+ body {  
+   display: flex;  
+   justify-content: center;  
+   align-items: center;  
+   width: 100vw;  
+   height: 100vh;  
+   overflow: hidden;  
+ }
+/* main box of insta */  
+ .insta {  
+   width: 150px;  
+   height: 150px;  
+   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);  
+   border-radius: 35px;  
+   display: grid;  
+   place-items: center;  
+ }  
+ /* innerbox in insta box */  
+ .innerbox {  
+   width: 120px;  
+   height: 120px;  
+   border: 10px solid #fff;  
+   border-radius: 32px;  
+   display: grid;  
+   place-items: center;  
+   position: relative;  
+ } 
+ /* center circle of insta */  
+ .innerbox::before {  
+   content: '';  
+   width: 45px;  
+   height: 45px;  
+   border: 10px solid #fff;  
+   border-radius: 50%;  
+   background: transparent;  
+   position: absolute;  
+ }  
+ /* top right circle of insta */  
+ .innerbox::after {  
+   content: '';  
+   width: 10px;  
+   height: 10px;  
+   border: 2px solid #fff;  
+   border-radius: 50%;  
+   background: #fff;  
+   position: absolute;  
+   top: 8px;  
+   right: 10px;  
+ } 
