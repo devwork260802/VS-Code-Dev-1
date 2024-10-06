@@ -1,221 +1,138 @@
- * {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-height: 100vh;
-background-color: #0a4b78;
-display: flex;
-justify-content: center;
-align-items: center;
+  --background-color: hsl(180, 20%, 90%);
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  min-height: 100vh;
+  padding: 2rem;
+
+  color: hsla(0, 0%, 0%, .6);
+  background: var(--background-color);
+  text-align: center;
 }
+
+h1 {
+  font-size: 3.2rem;
+  padding-top: 2rem;
+}
+
+h1+p {
+  font-size: 1.8rem;
+  padding: 2rem 0 3rem;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  margin: 2rem;
+
+  transform-style: preserve-3d;
+  transform: perspective(100rem);
+
+  cursor: pointer;
+}
+
 .container {
-width: 367px;
-height: 500px;
-position: relative;
-background: linear-gradient(to bottom, #01263a 0%, #4f94d4 70%, #c5d9ed 100%);
-box-shadow: 0 10px 20px rgba(0, 0, 0, .3), 0 10px 10px rgba(0, 0, 0, .3);
-border-radius: 80px;
-overflow: hidden;
+  --rX: 0;
+  --rY: 0;
+  --bX: 50%;
+  --bY: 80%;
+
+  width: 30rem;
+  height: 36rem;
+  border: 1px solid var(--background-color);
+  border-radius: 1.6rem;
+  padding: 4rem;
+
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+  transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+
+  background: linear-gradient(hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1)), url("https://images.unsplash.com/photo-1559113513-d5e09c78b9dd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
+  background-position: var(--bX) var(--bY);
+  background-size: 40rem auto;
+  box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+
+  transition: transform .6s 1s;
 }
-.disc-1 {
-position: absolute;
-top: 24%;
-left: 1%;
-width: 359px;
-height: 358px;
-background: #72aee6;
-opacity: 0.2;
-border-radius: 50%;
-animation: glow infinite 2s;
-animation-fill-mode: both;
-animation-direction: alternate;
+
+.container::before,
+.container::after {
+  content: "";
+
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #fff;
+
+  position: absolute;
+  z-index: 2;
+
+  opacity: .3;
+  transition: .3s;
 }
-.disc-2 {
-position: absolute;
-top: 35%;
-left: 16%;
-width: 260px;
-height: 260px;
-background: #9ec2e6;
-opacity: 0.4;
-border-radius: 50%;
-animation: glow infinite 2s;
-animation-fill-mode: both;
-animation-direction: alternate;
+
+.container::before {
+  top: 2rem;
+  right: 2rem;
+
+  border-bottom-width: 0;
+  border-left-width: 0;
 }
-.disc-3 {
-position: absolute;
-top: 43%;
-left: 27%;
-width: 180px;
-height: 180px;
-border-radius: 50%;
-background: #f0f6fc;
-opacity: 0.6;
-animation: glow infinite 2s;
-animation-fill-mode: both;
-animation-direction: alternate;
+
+.container::after {
+  bottom: 2rem;
+  left: 2rem;
+
+  border-top-width: 0;
+  border-right-width: 0;
 }
-.landscape-1 {
-position: absolute;
-bottom: 119px;
-left: -7px;
-width: 250px;
-height: 70px;
-background-color: #9ec2e6;
-transform: rotate(9deg);
+
+.container--active {
+  transition: none;
 }
-.landscape-2 {
-position: absolute;
-bottom: 90px;
-right: -7px;
-width: 350px;
-height: 90px;
-background-color: #72aee6;
-transform: rotate(-6deg);
+
+.container--2 {
+  filter: hue-rotate(80deg) saturate(140%);
 }
-.landscape-3 {
-position: absolute;
-bottom: 65px;
-left: -4px;
-width: 390px;
-height: 80px;
-background-color: #4f94d4;
-transform: rotate(5deg);
+
+.container--3 {
+  filter: hue-rotate(160deg) saturate(140%);
 }
-.landscape-4 {
-position: absolute;
-bottom: 50px;
-left: -4px;
-width: 400px;
-height: 70px;
-background-color: #135e96;
-transform: rotate(-4deg);
+
+.container p {
+  color: hsla(0, 0%, 100%, .6);
+  font-size: 2.2rem;
 }
-.landscape-5 {
-position: absolute;
-bottom: -10px;
-left: -6px;
-width: 370px;
-height: 90px;
-background-color: #043959;
-transform: rotate(5deg);
+
+.wrap:hover .container::before,
+.wrap:hover .container::after {
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
 }
-.tree-1 {
-position: absolute;
-top: 63%;
-left: 30%;
-height: 15px;
-width: 20px;
-background-color: #59a5d8;
-clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-box-shadow: 2px 0 2px 4px rgba(0, 0, 0, .1);
-}
-.tree-2 {
-position: absolute;
-top: 65%;
-left: 80%;
-height: 20px;
-width: 13px;
-background-color: #4f94d4;
-clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-box-shadow: 2px 0 2px 4px rgba(0, 0, 0, .1);
-}
-.tree-3 {
-position: absolute;
-top: 65%;
-left: 5%;
-height: 20px;
-width: 18px;
-background-color: #386fa4;
-clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-box-shadow: 2px 0 2px 4px rgba(0, 0, 0, .1);
-}
-.tree-4 {
-position: absolute;
-top: 70%;
-left: 60%;
-height: 20px;
-width: 15px;
-background-color: #386fa4;
-clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-box-shadow: 2px 0 2px 4px rgba(0, 0, 0, .1);
-}
-.tree-5 {
-position: absolute;
-top: 69%;
-left: 80%;
-height: 30px;
-width: 25px;
-background-color: #133c55;
-clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-box-shadow: 2px 0 2px 4px rgba(0, 0, 0, .1);
-}
-.tree-6 {
-position: absolute;
-top: 74%;
-left: 11%;
-height: 45px;
-width: 35px;
-background-color: #133c55;
-clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-box-shadow: 2px 0 2px 4px rgba(0, 0, 0, .1);
-}
-.tree-7 {
-position: absolute;
-top: 72%;
-left: 40%;
-height: 35px;
-width: 25px;
-background-color: #133c55;
-clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-box-shadow: 2px 0 2px 4px rgba(0, 0, 0, .1);
-}
-.star {
-position: absolute;
-width: 2px;
-height: 2px;
-background-color: white;
-}
-.s1 {
-top: 50px;
-left: 17px;
-}
-.s2 {
-top: 80px;
-left: 150px;
-}
-.s3 {
-top: 100px;
-left: 30px;
-}
-.s4 {
-top: 200px;
-left: 250px;
-}
-.s5 {
-top: 160px;
-left: 140px;
-}
-.s6 {
-top: 38px;
-left: 300px;
-}
-.s7 {
-top: 180px;
-left: 355px;
-}
-.s8 {
-top: 270px;
-left: 10px;
-}
-.s9 {
-top: 130px;
-left: 200px;
-}
-.s10 {
-top: 10px;
-left: 250px;
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, .6);
+  font-size: 1.6rem;
 }
