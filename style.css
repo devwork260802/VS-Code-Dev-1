@@ -25,6 +25,20 @@ h2 {
 	color: #fff;
 	font-size: 36px;
 }
+wrapper {
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  position: relative;
+  overflow:hidden;
+  border-radius: 40px;
+}
+
+.wrapper div {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
+}
 .animated .one {
 	border-radius: 100%;
 	width: 600px;
