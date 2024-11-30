@@ -1,40 +1,39 @@
-@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
- body {
-	 background: #3da1d1;
-	 color: #fff;
-	 overflow: hidden;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600,800);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,100);
+body {
+  padding: 50px;
+  background: #121D1D;
 }
- .congrats {
-	 position: absolute;
-	 top: 140px;
-	 width: 550px;
-	 height: 100px;
-	 padding: 20px 10px;
-	 text-align: center;
-	 margin: 0 auto;
-	 left: 0;
-	 right: 0;
+
+h1 {
+  font-size: 100px;
+  font-family: 'Intro', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  
+  background: -webkit-linear-gradient(-86deg, #EEF85B 5%, #7AEC8D 53%, #09E5C3 91%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  color: #232d2d;
+  
 }
- h1 {
-	 transform-origin: 50% 50%;
-	 font-size: 50px;
-	 font-family: 'Sigmar One', cursive;
-	 cursor: pointer;
-	 z-index: 2;
-	 position: absolute;
-	 top: 0;
-	 text-align: center;
-	 width: 100%;
+
+h2 {
+  font-size: 64px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  background: -webkit-linear-gradient(-86deg, #EEF85B 5%, #7AEC8D 53%, #09E5C3 91%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
- .blob {
-	 height: 50px;
-	 width: 50px;
-	 color: #ffcc00;
-	 position: absolute;
-	 top: 45%;
-	 left: 45%;
-	 z-index: 1;
-	 font-size: 30px;
-	 display: none;
-}
+
+h3 {
+  font-family: Intro;
+  font-size: 48px;
+   background: -webkit-linear-gradient(-91deg, #EEF85B 5%, #7AEC8D 53%, #09E5C3 91%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 58px;
  
+
+}
